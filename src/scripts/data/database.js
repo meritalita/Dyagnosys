@@ -1,6 +1,6 @@
 import { openDB } from 'idb';
 
-const DATABASE_NAME = 'dyagnosys';
+const DATABASE_NAME = 'diagnosys';
 const DATABASE_VERSION = 1;
 const OBJECT_STORE_NAME = 'saved-reports';
 

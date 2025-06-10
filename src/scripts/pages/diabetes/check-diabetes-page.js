@@ -70,8 +70,21 @@ class DiabetesCheckPage {
 
           <div>
             <label>BMI (Body Mass Index):
-              <input type="number" name="BMI_clapped" step="0.1" required class="input" />
+              <input type="number" name="BMI_clapped" step="0.1" required class="input" placeholder="Contoh: 22.5" />
             </label>
+          </div>
+
+          <div id="bmi-calc" class="hidden mt-2 space-y-2 bg-gray-50 p-3 rounded-md border">
+            <div>
+              <label>Berat Badan (kg): 
+              <input type="number" id="weight-input" class="input w-full" /></label>
+            </div>
+            <div>
+              <label>Tinggi Badan (cm):
+               <input type="number" id="height-input" class="input w-full" /></label>
+            </div>
+            <button type="button" id="calc-bmi-btn" class="btn btn-sm btn-secondary">Hitung BMI Sekarang</button>
+            <p id="bmi-output" class="text-sm text-green-600 mb-10"></p>
           </div>
 
           <button type="submit" class="btn btn-primary">Prediksi Risiko</button>
@@ -85,6 +98,27 @@ class DiabetesCheckPage {
     DiabetesCheckPresenter.init({
       form: document.querySelector('#diabetes-form'),
       resultContainer: document.querySelector('#diabetes-result'),
+    });
+
+    document.getElementById('toggle-bmi-calc')?.addEventListener('click', () => {
+      const el = document.getElementById('bmi-calc');
+      el.classList.toggle('hidden');
+    });
+
+    // Untuk menghitung BMI
+    document.getElementById('calc-bmi-btn')?.addEventListener('click', () => {
+      const weight = parseFloat(document.getElementById('weight-input').value);
+      const heightCm = parseFloat(document.getElementById('height-input').value);
+
+      if (weight > 0 && heightCm > 0) {
+        const heightM = heightCm / 100;
+        const bmi = (weight / heightM ** 2).toFixed(1);
+        document.querySelector('input[name="BMI_clapped"]').value = bmi;
+        document.getElementById('bmi-output').textContent = `✅ BMI Anda: ${bmi}`;
+      } else {
+        document.getElementById('bmi-output').textContent = `
+         Masukkan berat dan tinggi dengan benar.`;
+      }
     });
   }
 

@@ -1,0 +1,128 @@
+{
+  "id": "/?source=pwa#/",
+  "scope": "/",
+  "start_url": "/?source=pwa#/",
+  "name": "Dyagnosys - Deteksi Risiko Penyakit",
+  "short_name": "Dyagnosys",
+  "description": "Dyagnosys adalah aplikasi prediksi risiko penyakit kronis seperti diabetes dan jantung. Dengan pendekatan berbasis data dan antarmuka yang ramah pengguna, pengguna dapat melakukan dyagnosys mandiri, memantau kesehatan, serta mendapatkan rekomendasi gaya hidup sehat.",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#7F55B1",
+  "icons": [
+  {
+    "src": "images/logo-dyagnosys.png",
+    "type": "image/png",
+    "sizes": "48x48",
+    "purpose": "maskable any"
+  },
+  {
+    "src": "images/logo-dyagnosys.png",
+    "type": "image/png",
+    "sizes": "96x96",
+    "purpose": "maskable any"
+  },
+  {
+    "src": "images/logo-dyagnosys.png",
+    "type": "image/png",
+    "sizes": "144x144",
+    "purpose": "maskable any"
+  },
+  {
+    "src": "images/logo-dyagnosys.png",
+    "type": "image/png",
+    "sizes": "192x192",
+    "purpose": "maskable any"
+  },
+  {
+    "src": "images/logo-dyagnosys.png",
+    "type": "image/png",
+    "sizes": "384x384",
+    "purpose": "maskable any"
+  },
+  {
+    "src": "images/logo-dyagnosys.png",
+    "type": "image/png",
+    "sizes": "512x512",
+    "purpose": "maskable any"
+  }
+],
+  "screenshots": [
+    {
+      "src": "images/screenshots/home.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/screenshots/articles.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/screenshots/check-diabetes.png",
+      "sizes": "1080x2280",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/screenshots/check-jantung.png",
+      "sizes": "1080x2280",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "images/screenshots/examination-history.png",
+      "sizes": "1080x2280",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "images/screenshots/monitoring.png",
+      "sizes": "1080x2280",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Mulai Diagnosa",
+      "short_name": "Diagnosa",
+      "description": "Lakukan pemeriksaan risiko penyakit.",
+      "url": "/?source=pwa#/dyagnosys",
+      "icons": [
+        {
+          "src": "images/icons/dyagnosys.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        }
+      ]
+    },
+    {
+      "name": "Riwayat Diagnosa",
+      "short_name": "Riwayat",
+      "description": "Lihat hasil diagnosa sebelumnya.",
+      "url": "/?source=pwa#/history",
+      "icons": [
+        {
+          "src": "images/icons/history.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        }
+      ]
+    },
+    {
+      "name": "Artikel Kesehatan",
+      "short_name": "Artikel",
+      "description": "Baca tips dan artikel seputar gaya hidup sehat.",
+      "url": "/?source=pwa#/articles",
+      "icons": [
+        {
+          "src": "images/icons/article.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        }
+      ]
+    }
+  ]
+}

@@ -6,6 +6,11 @@ class HeartCheckPage {
       <section class="heart-check container">
         <h2 class="text-2xl font-bold mb-4">Cek Risiko Penyakit Jantung</h2>
         <form id="heart-form" class="grid gap-4">
+          <div>
+            <label>Nama Pasien:
+              <input type="text" name="NamaPasien" required class="input" />
+            </label>
+          </div>
           ${this._generateSelectField('Chest_Pain', 'Apakah Anda mengalami nyeri dada?')}
           ${this._generateSelectField('Shortness_of_Breath', 'Apakah Anda kesulitan bernafas?')}
           ${this._generateSelectField('Fatigue', 'Apakah Anda merasa sangat lelah tanpa penyebab jelas?')}

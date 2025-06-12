@@ -1,4 +1,5 @@
 import * as tf from '@tensorflow/tfjs';
+import { saveDiagnosisToHistory } from '../../utils/save-diagnosys';
 
 const DiabetesCheckPresenter = {
   async init({ form, resultContainer }) {
@@ -64,6 +65,14 @@ const DiabetesCheckPresenter = {
     }
 
     this._resultContainer.innerHTML = resultHtml + this._generateRecommendation(prob);
+    const namaPasien = formData.get('NamaPasien') || 'Pasien Diabetes';
+    await saveDiagnosisToHistory({
+      nama: namaPasien, 
+      tanggal: new Date().toLocaleString(),
+      hasil: `${(prob * 100).toFixed(1)}% risiko ${this._getRiskLevel(prob)}`,
+      detail: this._generateRecommendation(prob),
+      tipe: 'diabetes',
+    });
   },
 
   _generateRecommendation(prob) {
@@ -106,6 +115,11 @@ const DiabetesCheckPresenter = {
         </div>`;
     }
   },
+  _getRiskLevel(prob) {
+  if (prob >= 0.7) return 'tinggi';
+  if (prob >= 0.4) return 'sedang';
+  return 'rendah';
+},
 };
 
 export default DiabetesCheckPresenter;

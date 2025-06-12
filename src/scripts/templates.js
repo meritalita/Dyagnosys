@@ -16,6 +16,7 @@ export function generateMainNavigationListTemplate() {
   return `
     <li><a id="examination-history-button" class="examination-history-button" href="#/history">Examination History</a></li>
     <li><a id="monitoring-button" class="monitoring-button" href="#/monitoring">Health Monitoring</a></li>
+    <li><a id="health-articles-button" class="health-articles-button" href="#/articles">Health Articles </a></li>
   `;
 }
 
@@ -30,7 +31,6 @@ export function generateUnauthenticatedNavigationListTemplate() {
 export function generateAuthenticatedNavigationListTemplate() {
   return `
     <li id="push-notification-tools" class="push-notification-tools"></li>
-    <li><a id="health-articles-button" class="btn health-articles-button" href="#/articles">Health Articles </a></li>
     <li><a id="logout-button" class="logout-button" href="#/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
   `;
 }

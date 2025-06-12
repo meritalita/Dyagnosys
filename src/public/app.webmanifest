@@ -69,19 +69,31 @@
       "src": "images/screenshots/check-jantung.png",
       "sizes": "1080x2280",
       "type": "image/png",
-      "form_factor": "narrow"
+      "form_factor": "wide"
     },
     {
-      "src": "images/screenshots/examination-history.png",
+      "src": "images/screenshots/history.png",
       "sizes": "1080x2280",
       "type": "image/png",
-      "form_factor": "narrow"
+      "form_factor": "wide"
     },
     {
-      "src": "images/screenshots/monitoring.png",
+      "src": "images/screenshots/monitoring-diabetes.png",
       "sizes": "1080x2280",
       "type": "image/png",
-      "form_factor": "narrow"
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/screenshots/monitoring-jantung.png",
+      "sizes": "1080x2280",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/screenshots/rekomendasi.png",
+      "sizes": "1080x2280",
+      "type": "image/png",
+      "form_factor": "wide"
     }
   ],
   "shortcuts": [

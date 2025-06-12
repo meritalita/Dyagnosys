@@ -6,6 +6,11 @@ class DiabetesCheckPage {
       <section class="diabetes-check container">
         <h2 class="text-2xl font-bold mb-4">Cek Risiko Diabetes</h2>
         <form id="diabetes-form" class="grid gap-4">
+          <div>
+            <label>Nama Pasien:
+              <input type="text" name="NamaPasien" required class="input" />
+            </label>
+          </div>
           ${this._generateSelectField('HighBP', 'Apakah Anda memiliki tekanan darah tinggi?')}
           ${this._generateSelectField('HighChol', 'Apakah Anda memiliki kolesterol tinggi?')}
           ${this._generateSelectField('CholCheck', 'Apakah Anda rutin memeriksa kadar kolesterol?')}

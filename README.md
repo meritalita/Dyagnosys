@@ -11,6 +11,9 @@ Dyagnosys adalah aplikasi prediksi risiko penyakit kronis seperti diabetes dan j
 - `npm run prettier:write` – Memperbaiki dan memformat ulang kode secara otomatis.
 
 ## Struktur Proyek
+## Struktur Proyek
+
+```text
 dyagnosys
 ├── package.json              # Informasi dependensi dan script npm
 ├── package-lock.json         # File lock untuk memastikan versi dependensi tetap
@@ -36,3 +39,4 @@ dyagnosys
     └── styles                # Berkas stylesheet
         ├── responsives.css   # CSS untuk tampilan responsif
         └── styles.css        # Gaya visual utama aplikasi
+```

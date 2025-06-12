@@ -1,4 +1,5 @@
 import * as tf from '@tensorflow/tfjs';
+import { saveDiagnosisToHistory } from '../../utils/save-diagnosys';
 
 const HeartCheckPresenter = {
   async init({ form, resultContainer }) {
@@ -8,7 +9,7 @@ const HeartCheckPresenter = {
     try {
       this._model = await tf.loadGraphModel('/model_HeartRisk_tfjs/model.json');
     } catch (err) {
-      this._resultContainer.innerHTML = '<p class="text-red-600">❌ Gagal memuat model. Periksa koneksi atau lokasi model.</p>';
+      this._resultContainer.innerHTML = '<p class="text-red-600">Gagal memuat model. Periksa koneksi atau lokasi model.</p>';
       return;
     }
 
@@ -73,11 +74,19 @@ const HeartCheckPresenter = {
           ${advice}
         </div>
       `;
+      const namaPasien = formData.get('NamaPasien') || 'Pasien Jantung';
+      await saveDiagnosisToHistory({
+        nama: namaPasien, 
+        tanggal: new Date().toLocaleString(),
+        hasil: `${(prob * 100).toFixed(1)}% risiko ${this._getRiskLevel(prob)}`,
+        detail: advice,
+        tipe: 'jantung',
+      });
 
       prediction.dispose();
       inputTensor.dispose();
     } catch (error) {
-      this._resultContainer.innerHTML = `<p class="text-red-600">❌ Terjadi kesalahan saat prediksi: ${error.message}</p>`;
+      this._resultContainer.innerHTML = `<p class="text-red-600"> Terjadi kesalahan saat prediksi: ${error.message}</p>`;
     }
   },
 
@@ -117,6 +126,10 @@ const HeartCheckPresenter = {
       `;
     }
   },
+  _getRiskLevel(prob) {
+  if (prob >= 0.7) return 'tinggi';
+  if (prob >= 0.4) return 'sedang';
+  return 'rendah';
+},
 };
-
 export default HeartCheckPresenter;

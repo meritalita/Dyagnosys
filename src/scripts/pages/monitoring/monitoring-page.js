@@ -5,7 +5,16 @@ export default class MonitoringPage {
     return `
       <section class="monitoring-section">
         <h2>Monitoring Sistem</h2>
-        <canvas id="monitorChart" width="400" height="200"></canvas>
+
+        <div class="chart-container">
+          <h3>Grafik Risiko Diabetes</h3>
+          <canvas id="monitorChartDiabetes" width="400" height="200"></canvas>
+        </div>
+
+        <div class="chart-container" style="margin-top: 40px;">
+          <h3>Grafik Risiko Jantung</h3>
+          <canvas id="monitorChartHeart" width="400" height="200"></canvas>
+        </div>
       </section>
     `;
   }
